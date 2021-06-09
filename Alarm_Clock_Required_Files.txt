@@ -1,0 +1,40 @@
+Source Contributor: Aarohi Joshi
+
+Need of project:---To inculcate time management
+	        ---Avoid procrastination
+		---To create alerts for the users
+
+
+Libraries needed: 
+1]winsound---for playing sound (ringtones for alarm, .wav format)
+2]time-------for sleep (snooze purpose)
+3]datetime---for getting current time and comparing time for setting alarm
+4]pyttsx3----for text-to-speech conversion of time that is set for alarm
+5]sys--------for exiting the system when alarm is dismissed
+
+Inputs:
+1]form---Takes input from user in either 12Hr format or 24Hr format
+         1=input in 12Hr format
+	 2=input in 24Hr format
+Functions:
+1] h12()---Sets alarm in 12Hrs format 
+           displays a message when alarm is set that "alarm set for {hour}:{minutes} {am/pm} on {date}"
+
+2]h24()---Sets alarm in 24Hr format
+	  displays a message when alarm is set that "alarm set for {hour}:{minutes} Hours on {date}"
+
+Calling function accordingly:
+1]if form==1---call h12()
+	       File opened and message saved in file that "alarm set for {hour}:{minutes} {am/pm} on {date}" 
+2]if form==2---call h24()
+	       File opened and message saved in file as "alarm set for {hour}:{minutes} Hours on {date}"
+
+Important notes:
+0]All the ringtone files also need to be extracted in the same path along with the code (ringtones with .wav format will work with winsound)
+1]strftime()--->saves time in string format
+2]%H:%M-------->gets only hours and minutes from current time, in 24Hr format
+3]%I:%M %p----->gets hours minutes from current time, in 12Hr format. %p gets AM/PM from current time
+4]"%02d"------->pads "0" if number is single digit (i.e  if user enters "1", it will become "01")
+5]Check 'alarm file' for alarm history
+
+Added features:---Whenever alarm goes off, email is sent to the user
